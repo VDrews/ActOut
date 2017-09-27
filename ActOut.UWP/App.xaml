@@ -1,0 +1,14 @@
+﻿<Application
+    x:Class="ActOut.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    RequestedTheme="Dark">
+
+    
+    <Application.Resources>
+
+        <SolidColorBrush x:Key="SystemControlHighlightAccentBrush" Color="#2196f3" />
+
+    </Application.Resources>
+    
+</Application>

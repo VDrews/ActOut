@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.TypePage"
+             Title="TypePage"
+             BackgroundColor="{StaticResource Primary}">
+
+    <!-- SELECCION DE TIPO DE PROBLEMA -->
+
+    <StackLayout Padding="20">
+        <Label FontSize="Large" HorizontalTextAlignment="Center" Text="¿De que tema quieres hablar tus historias?"/>
+        <ScrollView VerticalOptions="CenterAndExpand">
+            
+            <StackLayout Spacing="20">
+                
+                <Button x:Name="BtnBullying" Style="{StaticResource ButtonStyle}" 
+                        Text="Sobre Bullying" Clicked="BtnBullying_OnClicked"/>
+                <Button x:Name="BtnGenero" Style="{StaticResource ButtonStyle}"
+                        Text="Sobre Violencia de Género" Clicked="BtnGenero_OnClicked"/>
+                <Button x:Name="BtnHomofobia" Style="{StaticResource ButtonStyle}"
+                        Text="Sobre Homofobia" Clicked="BtnHomofobia_OnClicked"/>
+                <Button x:Name="BtnRacismo" Style="{StaticResource ButtonStyle}" 
+                        Text="Sobre Racismo" Clicked="BtnRacismo_OnClicked"/>
+                <Button x:Name="BtnAgresion" Style="{StaticResource ButtonStyle}"
+                        Text="Sobre Agresión Fisica" Clicked="BtnAgresion_OnClicked"/>
+                <Button x:Name="BtnSexual" Style="{StaticResource ButtonStyle}"
+                        Text="Sobre Acoso Sexual" Clicked="BtnSexual_OnClicked"/>
+                <Button x:Name="BtnPerdidas" Style="{StaticResource ButtonStyle}" 
+                        Text="Sobre Perdidas familiares" Clicked="BtnPerdidas_OnClicked"/>
+                <Button x:Name="BtnAlcoholismo" Style="{StaticResource ButtonStyle}"
+                        Text="Sobre Alcoholismo" Clicked="BtnAlcoholismo_OnClicked"/>
+                <Button x:Name="BtnDrogadicion" Style="{StaticResource ButtonStyle}" 
+                        Text="Sobre Drogadición" Clicked="BtnDrogadicion_OnClicked"/>
+                <Button x:Name="BtnOtros" Style="{StaticResource ButtonStyle}" 
+                        Text="De otro temas" Clicked="BtnOtros_OnClicked"/>
+                
+            </StackLayout>
+
+        </ScrollView>
+        <Button Text="Continuar" Style="{StaticResource ContinueBtn}" 
+                Clicked="Btn_Next"/>
+    </StackLayout>
+
+</ContentPage>

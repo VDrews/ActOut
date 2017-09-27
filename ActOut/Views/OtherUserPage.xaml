@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.OtherUserPage">
+
+    <!-- PAGINA DE PERFIL DE OTRO USUARIO -->
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Actualizar"
+                     Icon="UpdateIcon.png" 
+                     Clicked="Update_OnClicked"/>
+
+        <ToolbarItem Text="Buscar"
+                     Icon="SearchIcon.png"
+                     Clicked="Search_OnClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <StackLayout Padding="10,20,10,0" VerticalOptions="FillAndExpand">
+
+            <!-- Barra de Busqueda -->
+            <StackLayout x:Name="SearchPanel" 
+                         BackgroundColor="Transparent" 
+                         Padding="10" Margin="4" 
+                         Spacing="0" IsVisible="False" 
+                         TranslationY="10" Opacity="0">
+
+                <SearchBar x:Name="SearchBar" Text="" 
+                           TextChanged="Search"/>
+                
+                <DatePicker x:Name="DatePicker" IsVisible="False"
+                            DateSelected="DatePicker_OnDateSelected"/>
+
+                <StackLayout Orientation="Horizontal" 
+                             VerticalOptions="FillAndExpand" HorizontalOptions="Start">
+                    
+                    <Button x:Name="BtnAll" Style="{StaticResource ButtonStyle}"
+                            Clicked="ChangeSearchAll" Text="Todo"/>
+                    
+                    <Button x:Name="BtnTitle" Style="{StaticResource ButtonStyle}" 
+                            Clicked="ChangeSearchTitle" 
+                            TextColor="{StaticResource GrayNotSelected}" Text="Titulo"/>
+                    
+                    <Button x:Name="BtnText" Style="{StaticResource ButtonStyle}"
+                            Clicked="ChangeSearchText" 
+                            TextColor="{StaticResource GrayNotSelected}" Text="Texto"/>
+                    
+                    <Button x:Name="BtnDate" Style="{StaticResource ButtonStyle}" 
+                            Clicked="ChangeSearchDate" 
+                            TextColor="{StaticResource GrayNotSelected}" Text="Fecha"/>
+                </StackLayout>
+
+            </StackLayout>
+
+
+            <StackLayout x:Name="MisHistorias" 
+                         Orientation="Horizontal" Margin="5">
+                <Label Text="HISTORIAS" 
+                       FontSize="20" TextColor="{StaticResource White}"/>
+            </StackLayout>
+
+
+            <!-- Panel de Historias -->
+            <Grid x:Name="Panel">
+
+                <ScrollView BackgroundColor="Transparent">
+                    <ListView x:Name="Lista"
+                              ItemSelected="Lista_OnItemSelected"
+                              HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Margin="5" 
+                                                 Spacing="2" 
+                                                 BackgroundColor="{Binding Color}">
+
+                                        <!-- Barra Superior -->
+                                        <Grid>
+                                            <BoxView Color="#25000000"/>
+                                            
+                                            <StackLayout Orientation="Horizontal" 
+                                                         Margin="8" Spacing="2">
+                                                <Label Text="Creada el " 
+                                                       FontSize="10" TextColor="{StaticResource White}"/>
+                                                
+                                                <Label Text="{Binding Date, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                                       FontSize="10" TextColor="{StaticResource White}" 
+                                                       HorizontalOptions="End"/>
+                                            </StackLayout>
+                                        </Grid>
+
+                                        <!-- Titulo y Texto -->
+                                        <Label Text="{Binding Title}" 
+                                               FontSize="46"
+                                               TextColor="{StaticResource White}"
+                                               Margin="15,4,8,4"/>
+                                        <Label Text="{Binding Text}"
+                                               FontSize="16"
+                                               TextColor="{StaticResource White}"
+                                               Margin="15,6,12,24"/>
+
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                </ScrollView>
+
+                <!-- Aparece cuando no hay ninguna historia que mostrar -->
+                <Label x:Name="LabelEmptyList"
+                       IsVisible="False"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       TextColor="{StaticResource White}"
+                       Text="No tiene ninguna historia publicada"/>
+            </Grid>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.AddPage"
+             Title="Crear Historia">
+
+    <!-- PAGINA PARA CREAR HISTORIA NUEVA -->
+
+    <!-- Titulo -->
+    <StackLayout Padding="20">
+        <Entry x:Name="EntryTitulo"
+               Placeholder="Escribe el título"/>
+
+        <Editor x:Name="EntryTexto"
+                VerticalOptions="FillAndExpand"
+                TextColor="{StaticResource White}"
+                Keyboard="Text"/>
+
+        <!-- Selector de Colores -->
+        <Grid x:Name="ColorPalette"
+              HeightRequest="60"
+              HorizontalOptions="CenterAndExpand"
+              Margin="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="PickerRed" 
+                   HeightRequest="40" WidthRequest="40" 
+                   Source="PickerRed.png" 
+                   Grid.Column="0"/>
+            
+            <Image x:Name="PickerGreen" 
+                   HeightRequest="40" WidthRequest="40" 
+                   Source="PickerGreen.png"
+                   Grid.Column="1"/>
+            
+            <Image x:Name="PickerBlue" 
+                   HeightRequest="40" WidthRequest="40" 
+                   Source="PickerBlue.png" 
+                   Grid.Column="2"/>
+            
+            <Image x:Name="PickerYellow" 
+                   HeightRequest="40" WidthRequest="40" 
+                   Source="PickerYellow.png" 
+                   Grid.Column="3"/>
+            
+            <Image x:Name="PickerPurple" 
+                   HeightRequest="40" WidthRequest="40" 
+                   Source="PickerPurple.png" 
+                   Grid.Column="4"/>
+            
+            <Image x:Name="PickerGray" 
+                   HeightRequest="40" WidthRequest="40" 
+                   Source="PickerGray.png" 
+                   Grid.Column="5"/>
+            
+            <Image x:Name="SpeechBtn" 
+                   HeightRequest="40" WidthRequest="40" 
+                   Source="SpeechIcon.png" 
+                   Grid.Column="6"/>
+
+        </Grid>
+
+        <!-- Boton Agregar -->
+        <Button x:Name="AddButton"
+                Text="AÑADIR HISTORIA" 
+                Style="{StaticResource ContinueBtn}"
+                Clicked="Button_OnClicked"/>
+        
+        <ActivityIndicator x:Name="ActivityIndicator"/>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.MorePage"
+             Title="Detalles">
+
+    <!-- VISUALIZADOR DE HISTORIA + BOTON BORRAR -->
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Eliminar" 
+                     Icon="DeleteIcon.png" 
+                     Clicked="DeleteItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid x:Name="Panel" Margin="20">
+
+            <!-- Titulo -->
+            <Label x:Name="LabelTitle" Margin="80" 
+                   HorizontalTextAlignment="Center" FontSize="40"/>
+
+            <ScrollView Margin="10,0,10,0" 
+                        BackgroundColor="Transparent">
+                <StackLayout>
+
+                    <!-- Caja Transparente para hacer el efecto de scroll -->
+                    <BoxView x:Name="HeightBox" 
+                             Color="Transparent"
+                             HorizontalOptions="FillAndExpand" HeightRequest="200"/>
+
+                    <!-- Barra Superior -->
+                    <StackLayout x:Name="UserBox" 
+                                 Orientation="Horizontal"
+                                 VerticalOptions="End" HorizontalOptions="FillAndExpand"
+                                 HeightRequest="40" 
+                                 BackgroundColor="#25000000" 
+                                 Padding="10,0,0,0">
+                        
+                        <Label x:Name="LabelVisitas" FontSize="10" 
+                               VerticalOptions="Center"/>
+                        
+                        <Label Text="visitas" FontSize="10" 
+                               VerticalOptions="Center" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                    <!-- Cuadro de Texto -->
+                    <StackLayout BackgroundColor="{StaticResource White}" 
+                                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                        <Label x:Name="LabelText"  Margin="30"
+                               TextColor="Black"/>
+
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

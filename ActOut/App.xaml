@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ActOut.App">
+  <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#1964AA</Color>
+            <Color x:Key="PrimaryDark">#0F589C</Color>
+            <Color x:Key="PrimaryLight">#3984CA</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
+            <Color x:Key="GrayNotSelected">#C0C0C0</Color>
+            <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+            <Color x:Key="Yellow">#D6CB2E</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+            <Color x:Key="White">#FAFAFA</Color>
+            <Color x:Key="Blue">#2196f3</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BorderRadius" Value="10"/>
+                <Setter Property="TextColor" Value="{StaticResource White}"/>
+            </Style>
+
+            <Style x:Key="ContinueBtn" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                <Setter Property="BorderRadius" Value="10"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryLight}"></Setter>
+            </Style>
+            
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource White}"/>
+            </Style>
+
+            <Style TargetType="SearchBar">
+                <Setter Property="PlaceholderColor" Value="{StaticResource White}"/>
+                <Setter Property="Placeholder" Value="Buscar..."/>
+            </Style>
+            
+            <Style TargetType="ActivityIndicator">
+                <Setter Property="IsVisible" Value="False"/>
+                <Setter Property="IsRunning" Value="False"/>
+                <Setter Property="Color" Value="{StaticResource Blue}"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

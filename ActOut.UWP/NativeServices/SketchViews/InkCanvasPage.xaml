@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="ActOut.UWP.NativeServices.InkCanvasPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ActOut.UWP.NativeServices"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Background ="#1964AA">
+            <TextBlock Margin="12,4,2,0" Text="Modo Dibujo Experimental" FontSize="28"/>
+            <TextBlock Margin="12,0,2,4" Text="ActOut (Windows Ink)" FontSize="28"/>
+        </StackPanel>
+        
+        <InkCanvas x:Name="inkCanvas" Grid.Row="1"/>
+        <InkToolbar x:Name="inkToolbar"  TargetInkCanvas="{x:Bind inkCanvas}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1"/>
+    </Grid>
+</Page>
+

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.CreateAccountPage"
+             Title="CreateAccountPage"
+             BackgroundColor="{StaticResource Primary}">
+
+    <!-- PAGINA DE REGISTRO DE USUARIO NUEVO -->
+    
+    <StackLayout Padding="20" Spacing="30" 
+                 VerticalOptions="FillAndExpand">
+        <Label Text="Crear Cuenta" 
+               FontSize="60" 
+               TextColor="{StaticResource White}"/>
+
+        <StackLayout>
+            <Label Text="Nombre de Usuario" 
+                   FontSize="Large"/>
+            
+            <Entry x:Name="EntryUser" 
+                   Placeholder="Introduzca su nombre de usuario"/>
+        </StackLayout>
+
+        <StackLayout>
+            <Label Text="Contraseña" FontSize="Large"/>
+            
+            <Entry x:Name="EntryPass" IsPassword="True"
+                   Placeholder="Introduzca su contraseña"/>
+
+            <Entry x:Name="EntryPassConfirm" IsPassword="True"
+                   Placeholder="Vuelva a introducir su contraseña"/>
+        </StackLayout>
+
+        <StackLayout BackgroundColor="{StaticResource Yellow}">
+            <Label Margin="15" 
+                   Text="RECOMENDACIONES" FontSize="16"/>
+            
+            <Label Margin="20, 10, 20, 10" 
+                   TextColor="{StaticResource White}" 
+                   Text="- Es recomedable que el nombre de usuario no contenga ninguna información que te pueda identificar"/>
+            
+            <Label Margin="20, 10, 20, 10" 
+                   TextColor="{StaticResource White}" 
+                   Text="- La contraseña debe tener más de 8 carácteres y con números."/>
+            
+            <Label Margin="20, 10, 20, 40" 
+                   TextColor="{StaticResource White}" 
+                   Text="- La aplicación es completamente anónima, no es necesario introducir el email ni otro tipo de datos."/>
+        </StackLayout>
+
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Button Text="Crear Cuenta" 
+                    Style="{StaticResource ContinueBtn}" 
+                    Clicked="Button_OnClicked"/>
+            
+            <Button Text="CANCELAR" 
+                    Style="{StaticResource ButtonStyle}" 
+                    Clicked="Cancel_OnClicked"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

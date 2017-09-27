@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.AboutPage"
+             Title="Acerca de ActOut">
+
+    <!-- PAGINA DE ACERCA DE LA APLICACION -->
+    
+    <StackLayout Padding="20" HorizontalOptions="Center">
+        
+        <!-- Cabecera Principal -->
+        <StackLayout Orientation="Horizontal" 
+                     VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            
+            <Image Source="ActOutLogo_White.png" 
+                   HeightRequest="100" WidthRequest="100"/>
+            
+            <StackLayout>
+                <Label Text="ActOut" 
+                       FontSize="80" 
+                       TextColor="{StaticResource White}"/>
+                
+                <Label Text="Ver. #Apps4Good Preview" 
+                       TextColor="{StaticResource White}" 
+                       FontAttributes="Italic"/>
+            </StackLayout>
+            
+        </StackLayout>
+
+        <!-- Textos -->
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label>
+                <Label.Text>
+                    ActOut es una aplicación que permite a las personas que sufren algún tipo de acoso a poder contar de forma anónima sus historias del dia a dia, asi pueden dar el primer paso para comunicarlo y acercarles a solucionar sus problemas.
+                </Label.Text>
+            </Label>
+
+            <Label>
+                <Label.Text>
+                    La aplicación trata siempre de ser lo mas anónima posible, no requiere de ningún tipo de información mas que un nombre de usuario, además, los usuarios que no han publicado nada, no podrán ser buscados de ninguna forma.
+                </Label.Text>
+            </Label>
+
+            <Label>
+                <Label.Text>
+                    La base de datos funciona a traves de Azure, también tiene una base de datos local por si en algún momento no existe conexión a la red o bien no logra conectarse a Azure.
+                </Label.Text>
+            </Label>
+            <Label>
+                <Label.Text>
+                    La aplicación usa el servicio de Cortana "Cognitive Service" para determinar si una persona está alegre o triste a partir del texto que crea, además también he añadido Windows Hello para que el usuario pueda entrar con su PIN de Windows y así mejorar la seguridad y evitar tener que recordar el usuario y la contraseña.
+                </Label.Text>
+            </Label>
+        </StackLayout>
+
+        <!-- Firma -->
+        <StackLayout VerticalOptions="End">
+            <Label Text="Diseñado por: Andrés Garcia" 
+                   TextColor="{StaticResource White}"/>
+            
+            <Label Text="thedrews@outlook.es"
+                   TextColor="{StaticResource White}"/>
+        </StackLayout>
+
+
+    </StackLayout>
+
+</ContentPage>

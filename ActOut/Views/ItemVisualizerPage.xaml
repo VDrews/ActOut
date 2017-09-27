@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.ItemVisualizerPage"
+             Title="Detalles">
+
+    <!-- VISUALIZADOR DE HISTORIAS -->
+    
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Icon="SpeakIcon.png"
+                     Text="Escuchar"
+                     Clicked="TextToSpeechBtn_OnClicked"/>
+
+    </ContentPage.ToolbarItems>
+
+    <Grid x:Name="Panel" Margin="20">
+
+        <Label x:Name="LabelTitle" 
+               FontSize="40"
+               Margin="80" 
+               HorizontalTextAlignment="Center"/>
+
+        <ScrollView Margin="10,0,10,0" BackgroundColor="Transparent">
+            
+            <StackLayout>
+                <BoxView x:Name="HeightBox" 
+                         Color="Transparent" 
+                         HorizontalOptions="FillAndExpand" HeightRequest="200"/>
+                
+                <StackLayout x:Name="UserBox" 
+                             Orientation="Horizontal"
+                             Padding="10,0,0,0"
+                             VerticalOptions="End" HorizontalOptions="FillAndExpand"
+                             HeightRequest="40" 
+                             BackgroundColor="#25000000">
+                    <Label Text="Creado por: " 
+                           FontSize="10" VerticalOptions="Center"/>
+                    
+                    <Label x:Name="LabelUser" 
+                           FontSize="10" VerticalOptions="Center" 
+                           FontAttributes="Bold"/>
+                </StackLayout>
+                
+                <StackLayout BackgroundColor="{StaticResource White}" 
+                             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    
+                    <Label x:Name="LabelText"  Margin="30"
+                           TextColor="Black"/>
+                    
+                </StackLayout>
+            </StackLayout>
+            
+        </ScrollView>
+    </Grid>
+</ContentPage>

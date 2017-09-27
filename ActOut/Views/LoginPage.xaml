@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.LoginPage"
+             Title="LoginPage"
+             BackgroundColor="{StaticResource Primary}">
+
+    <!-- PAGINA DE INICIO DE SESION -->
+
+    <!-- Cabecera de ActOut -->
+    <StackLayout Padding="20">
+
+        <StackLayout Orientation="Horizontal" 
+                     Margin="20" HorizontalOptions="Center">
+            <Image Source="ActOutLogo_White.png" 
+                   VerticalOptions="Center"
+                   HeightRequest="80" WidthRequest="80"/>
+            
+            <StackLayout>
+                <Label Text="ActOut" 
+                       FontSize="72" 
+                       TextColor="{StaticResource White}"/>
+                
+                <Label Text="Ver. #Apps4Good Preview" 
+                       TextColor="{StaticResource White}" 
+                       FontAttributes="Italic"/>
+            </StackLayout>
+            
+        </StackLayout>
+
+
+        <!-- Formulario de inicio de sesion -->
+        <StackLayout Padding="15" Spacing="20"
+                     VerticalOptions="CenterAndExpand"
+                     BackgroundColor="{StaticResource PrimaryDark}">
+
+            <StackLayout>
+                <Label Text="Nombre de Usuario" 
+                       FontSize="Large"/>
+
+                <Entry x:Name="EntryUser" 
+                       Placeholder="Introduzca el nombre de usuario"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label FontSize="Large" 
+                       Text="Contraseña"/>
+
+                <Entry x:Name="EntryPass" 
+                       IsPassword="True" 
+                       Placeholder="Introduzca la contraseña"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="INICIAR SESION" Style="{StaticResource ContinueBtn}"
+                        Clicked="Login_OnClicked"/>
+
+                <Button Text="Crear Cuenta" Style="{StaticResource ButtonStyle}"
+                        Clicked="CreateAccount_OnClicked" />
+            </StackLayout>
+            
+        </StackLayout>
+
+        <Label FontSize="10" 
+               Text="Creado por Andrés García" 
+               HorizontalTextAlignment="Center"/>
+
+    </StackLayout>
+
+</ContentPage>

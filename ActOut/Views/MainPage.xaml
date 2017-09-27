@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActOut.Views.MainPage"
+             Title="Pagina Principal">
+
+    <!-- PAGINA PRINCIPAL -->
+    
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Icon="UpdateIcon.png" 
+                     Text="Actualizar" 
+                     Clicked="Update_OnClicked"/>
+
+        <ToolbarItem x:Name="ToolbarItem" 
+                     Icon="ProfileIcon.png" 
+                     Clicked="OnGoUser_OnClicked" />
+
+        <ToolbarItem Text="Nuevo"
+                     Icon="AddIcon.png"
+                     Clicked="AddItem_OnClicked"/>
+
+        <ToolbarItem Text="Buscar"
+                     Icon="SearchIcon.png"
+                     Clicked="Search_OnClicked"/>
+        
+        <ToolbarItem Text="Pintar"
+                     Icon="SketchIcon.png"
+                     Clicked="Sketch_OnClicked"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+
+            <StackLayout Spacing="15">
+
+                <!-- Barra de Busqueda -->
+                <StackLayout x:Name="SearchPanel" BackgroundColor="Transparent" Padding="10" Margin="4" Spacing="0" IsVisible="False" TranslationY="10" Opacity="0">
+                    <SearchBar x:Name="SearchBar" Text="" TextChanged="Search"/>
+                    
+                    <DatePicker x:Name="DatePicker" IsVisible="False"
+                                DateSelected="DatePicker_OnDateSelected"/>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="Start">
+                        <Button x:Name="BtnAll" Style="{StaticResource ButtonStyle}"
+                                Clicked="ChangeSearchAll" Text="Todo"/>
+                        
+                        <Button x:Name="BtnUser" Style="{StaticResource ButtonStyle}"
+                                Clicked="ChangeSearchUser" 
+                                TextColor="{StaticResource GrayNotSelected}" Text="Usuario"/>
+                        
+                        <Button x:Name="BtnTitle" Style="{StaticResource ButtonStyle}" 
+                                Clicked="ChangeSearchTitle" 
+                                TextColor="{StaticResource GrayNotSelected}" Text="Titulo"/>
+                        
+                        <Button x:Name="BtnText" Style="{StaticResource ButtonStyle}"
+                                Clicked="ChangeSearchText" 
+                                TextColor="{StaticResource GrayNotSelected}" Text="Texto"/>
+                        
+                        <Button x:Name="BtnDate" Style="{StaticResource ButtonStyle}" 
+                                Clicked="ChangeSearchDate" 
+                                TextColor="{StaticResource GrayNotSelected}" Text="Fecha"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <!-- Panel de Historias -->
+                <ScrollView x:Name="Panel">
+
+                    <ListView x:Name="Lista"
+                              ItemSelected="Lista_OnItemSelected">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <StackLayout Margin="10" BackgroundColor="{Binding Color}" Spacing="2" VerticalOptions="Center" HorizontalOptions="Center">
+
+                                        <!-- Barra superior -->
+                                        <Grid VerticalOptions="Center">
+                                            <BoxView Color="#25000000"/>
+                                            
+                                            <StackLayout Orientation="Horizontal" 
+                                                         Margin="8" Spacing="2">
+                                                <Label Text="Historia de " FontSize="12"/>
+                                                
+                                                <Label Text="{Binding User}" FontSize="12" 
+                                                       FontAttributes="Bold"/>
+                                                
+                                                <Label Text="creada el " FontSize="12"/>
+                                                
+                                                <Label Text="{Binding Date, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                                       FontSize="12" HorizontalOptions="End"/>
+                                            </StackLayout>
+                                        </Grid>
+
+
+                                        <!-- Titulo y Contenido -->
+                                        <Label Text="{Binding Title}" 
+                                                   FontSize="46"
+                                                   Margin="15,4,8,4"/>
+                                        
+                                        <Label Text="{Binding Text}"
+                                                   FontSize="16"
+                                                   Margin="15,6,12,12"/>
+                                        
+                                        <StackLayout Orientation="Horizontal" Margin="15, 6, 12, 24" Spacing="2">
+                                            <Label FontSize="10" Text="{Binding User}"/>
+                                            <Label FontSize="10" Text="se encontraba"/>
+                                            <Label FontSize="10" Text="{Binding Estado}"/>
+                                            <Label FontSize="10" Text=" /  Se sentía"/>
+                                            <Label FontSize="10" Text="{Binding Sentimiento}"/>
+                                        </StackLayout>
+
+
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
